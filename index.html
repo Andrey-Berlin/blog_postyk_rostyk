@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>Blog Postyka - Rostyka</title>
+    
+  </head>
+  <body>
+    <header>
+         <h1>Blog Postyka - Rostyka</h1>
+      
+    </header>
+    <section>
+         <div id = "blog"> </div>
+    </section>
+ 
+    <script>
+      getText("https://andrey-berlin.github.io/blog_postyk_rostyk/blog.txt");
+      async function getText(file){
+        let x = await fetch(file);
+        let y = await x.text();
+        let blog = document.getElementById("blog");
+       blog.innerHTML = y;
+      }
+    </script>
+  </body>
+</html>
